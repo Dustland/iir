@@ -11,7 +11,8 @@ class FileOutput:
         self.file = file + datetime.datetime.now().strftime('_%m%d_%H%M%S.txt')
     def out(self, st):
         with open(self.file, 'a') as f:
-            print >>f,  st
+            # print >>f,  st
+            print(st, end='', file=f)
 
 def lda_learning(f, LDA, smartinit, options, docs, voca, plimit=1):
     import time
